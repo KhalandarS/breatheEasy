@@ -3,53 +3,44 @@ import { Leaf } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
+    <footer className="border-t py-16 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-5 h-5 text-primary" />
               <span className="font-semibold">BreatheEasy</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Making every journey healthier with clean air routing.
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
+              Making every journey healthier with clean air routing powered by real-time pollution data.
             </p>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-3 text-sm">Product</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4 text-sm">Product</h3>
+            <ul className="space-y-3 text-sm">
               <li>
                 <Link href="/planner">
-                  <a className="text-muted-foreground hover:text-foreground" data-testid="link-planner">Route Planner</a>
+                  <a className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-planner">Route Planner</a>
                 </Link>
               </li>
               <li>
-                <a href="#how-it-works" className="text-muted-foreground hover:text-foreground">How It Works</a>
+                <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
+              </li>
+              <li>
+                <a href="#data-sources" className="text-muted-foreground hover:text-foreground transition-colors">Data Sources</a>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold mb-3 text-sm">About</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold mb-4 text-sm">Legal</h3>
+            <ul className="space-y-3 text-sm">
               <li>
-                <a href="#about" className="text-muted-foreground hover:text-foreground">About Us</a>
+                <a href="#privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a>
               </li>
               <li>
-                <a href="#data-sources" className="text-muted-foreground hover:text-foreground">Data Sources</a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="font-semibold mb-3 text-sm">Legal</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#terms" className="text-muted-foreground hover:text-foreground">Terms of Service</a>
+                <a href="#terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a>
               </li>
             </ul>
           </div>

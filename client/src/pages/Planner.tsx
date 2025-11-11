@@ -43,23 +43,28 @@ export default function Planner() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       
-      <div className="pt-20 px-4 pb-8">
+      <div className="pt-32 px-6 pb-12">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-semibold mb-8" data-testid="text-planner-title">
-            Plan Your Clean Air Route
-          </h1>
+          <div className="mb-12">
+            <h1 className="text-4xl font-semibold tracking-tight mb-4" data-testid="text-planner-title">
+              Plan Your Clean Air Route
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Find healthier paths for your journey with real-time air quality data
+            </p>
+          </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 space-y-8">
               <MapPlaceholder />
               
               {showResults && (
                 <div>
-                  <h2 className="text-lg font-semibold mb-4">Route Options</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <h2 className="text-2xl font-semibold mb-6">Route Options</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {mockRoutes.map((route) => (
                       <RouteComparisonCard
                         key={route.type}
@@ -72,7 +77,7 @@ export default function Planner() {
               )}
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
               <LocationInput
                 label="Start Location"
                 placeholder="Enter starting point..."
@@ -86,12 +91,13 @@ export default function Planner() {
               
               <div className="flex justify-center">
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="icon"
+                  className="h-10 w-10 rounded-full"
                   onClick={handleSwapLocations}
                   data-testid="button-swap-locations"
                 >
-                  <ArrowLeftRight className="w-4 h-4" />
+                  <ArrowLeftRight className="w-5 h-5" />
                 </Button>
               </div>
               
@@ -105,8 +111,7 @@ export default function Planner() {
               <RouteOptions mode={travelMode} onModeChange={setTravelMode} />
               
               <Button 
-                className="w-full" 
-                size="lg"
+                className="w-full h-12 text-base" 
                 onClick={handleFindRoutes}
                 disabled={!startLocation || !endLocation}
                 data-testid="button-find-routes"

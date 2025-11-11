@@ -4,29 +4,29 @@ import FeatureCard from "./FeatureCard";
 const features = [
   {
     icon: MapPin,
-    title: "Enter Start & End Points",
-    description: "Choose your starting location and destination with our easy-to-use interface"
+    title: "Enter Routes",
+    description: "Simply enter your starting point and destination to begin planning your healthier journey"
   },
   {
     icon: Wind,
-    title: "View Pollution Hotspots",
-    description: "See real-time air quality data and identify areas with poor air quality"
+    title: "View Air Quality",
+    description: "See real-time pollution data and identify areas with poor air quality along your route"
   },
   {
     icon: Route,
-    title: "Get Cleaner-Air Routes",
-    description: "Receive optimized routes that prioritize cleaner air, even if slightly longer"
+    title: "Get Healthier Path",
+    description: "Receive optimized routes that prioritize cleaner air while balancing distance and time"
   }
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-12" data-testid="text-how-it-works-title">
+    <section className="py-24 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-semibold tracking-tight text-center mb-16" data-testid="text-how-it-works-title">
           How It Works
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}

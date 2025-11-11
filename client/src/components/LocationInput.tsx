@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { MapPin, Navigation } from "lucide-react";
+import { Navigation } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 interface LocationInputProps {
@@ -19,27 +19,25 @@ export default function LocationInput({
   onUseCurrentLocation 
 }: LocationInputProps) {
   return (
-    <Card className="p-4" data-testid={`card-location-${label.toLowerCase()}`}>
-      <div className="flex items-center gap-2 mb-2">
-        <MapPin className="w-4 h-4 text-muted-foreground" />
-        <label className="text-sm font-medium">{label}</label>
-      </div>
-      <div className="flex gap-2">
+    <Card className="p-6 rounded-xl shadow-sm bg-white" data-testid={`card-location-${label.toLowerCase()}`}>
+      <label className="text-sm font-medium text-muted-foreground mb-3 block">{label}</label>
+      <div className="flex gap-3">
         <Input
           placeholder={placeholder}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="flex-1"
+          className="flex-1 h-12 rounded-lg"
           data-testid={`input-location-${label.toLowerCase()}`}
         />
         {onUseCurrentLocation && (
           <Button 
             variant="outline" 
             size="icon"
+            className="h-12 w-12"
             onClick={onUseCurrentLocation}
             data-testid="button-current-location"
           >
-            <Navigation className="w-4 h-4" />
+            <Navigation className="w-5 h-5" />
           </Button>
         )}
       </div>
